@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a1022">
+<title>Heagun — Pukul & Tantang</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="#" data-page="home" aria-label="Heagun home">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3 4 14h7l-1 7 10-12h-7l1-6Z"/></svg></span>
+      <span>Heagun</span>
+    </a>
+    <nav class="nav">
+      <button class="nav-link active" data-page="home"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></svg>Home</button>
+      <button class="nav-link" data-page="features"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>Fitur</button>
+      <button class="nav-link" data-page="leaderboard"><svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0ZM7 6H4v2a4 4 0 0 0 4 4M17 6h3v2a4 4 0 0 1-4 4"/></svg>Leaderboard</button>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="mini-status"><span class="online-dot"></span><span id="sidebarStatus">Siap bermain</span></div>
+      <button class="nav-link hidden" id="logoutSide"><svg viewBox="0 0 24 24"><path d="M10 17l5-5-5-5M15 12H3M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7"/></svg>Keluar</button>
+      <span class="version">HEAGUN ARCADE · V1.0</span>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="mobile-brand" data-page="home"><span class="brand-mark"><svg viewBox="0 0 24 24"><path d="M14 3 4 14h7l-1 7 10-12h-7l1-6Z"/></svg></span>Heagun</button>
+      <div class="top-spacer"></div>
+      <div class="account" id="accountArea">
+        <span class="avatar" id="avatar">G</span>
+        <span class="account-name" id="accountName">Guest</span>
+        <button class="btn btn-small btn-outline" id="openAuth">Masuk</button>
+      </div>
+    </header>
+
+    <section class="page active" id="page-home">
+      <div class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="online-dot"></span> ARCADE BATTLE</span>
+          <h1>Refleks cepat.<br><span>Skor tertinggi.</span></h1>
+          <p>Main santai sendiri atau adu skor 1 menit melawan pemain online. Setiap ketukan menentukan posisi kamu di papan peringkat.</p>
+          <div class="hero-actions"><button class="btn btn-primary" id="playOffline"><svg viewBox="0 0 24 24"><path d="m9 6 10 6-10 6Z"/></svg>Main offline</button><button class="btn btn-outline" id="playOnline"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6M18 14a5 5 0 0 1 3 4v2"/></svg>Tanding online</button></div>
+          <div class="hero-note"><svg viewBox="0 0 24 24"><path d="m12 3 9 4v5c0 5-4 8-9 9-5-1-9-4-9-9V7Z"/><path d="m8 12 3 3 5-6"/></svg>Progres dan skor tersimpan ke akunmu</div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-glow"></div><div class="art-ring ring-one"></div><div class="art-ring ring-two"></div>
+          <div class="target-card"><div class="target-face"><svg viewBox="0 0 100 100"><path d="M23 42 17 27l18 6M77 42l6-15-18 6" fill="#f2b08b"/><path d="M22 43Q20 18 50 18t28 25v21H22Z" fill="#101827"/><ellipse cx="50" cy="51" rx="27" ry="31" fill="#f4bd99"/><path d="M24 42q5-27 27-24 22 0 27 24l-6-12q-23 8-42-1Z" fill="#171b28"/><path d="M35 48h9M56 48h9" stroke="#172033" stroke-width="5" stroke-linecap="round"/><path d="M43 65q7 7 14 0" fill="none" stroke="#9d4b40" stroke-width="3" stroke-linecap="round"/><path d="M15 98q2-28 35-28t35 28" fill="#203e71"/><path d="m39 74 11 13 11-13" fill="#f5f7fb"/><path d="m46 82 4 5 4-5 5 16H41Z" fill="#d33d4f"/></svg></div><span>PRABOWO</span></div>
+          <div class="floating-score"><svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0ZM7 6H4v2a4 4 0 0 0 4 4M17 6h3v2a4 4 0 0 1-4 4"/></svg><div><small>HIGH SCORE</small><strong id="heroHighScore">0</strong></div></div>
+          <div class="floating-bolt"><svg viewBox="0 0 24 24"><path d="M14 3 4 14h7l-1 7 10-12h-7l1-6Z"/></svg></div>
+        </div>
+      </div>
+      <div class="section-heading"><div><span class="eyebrow">PILIH MODE</span><h2>Siap beraksi?</h2></div><button class="text-btn" data-page="leaderboard">Lihat leaderboard <span>→</span></button></div>
+      <div class="mode-grid">
+        <article class="mode-card mode-offline"><div class="mode-icon"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg></div><span class="mode-tag">LATIHAN</span><h3>Main Offline</h3><p>Latihan refleks selama 30 detik. Skor masuk ke leaderboard offline.</p><button class="card-action" id="cardOffline">Main sekarang <span>↗</span></button></article>
+        <article class="mode-card mode-online"><div class="mode-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6M18 14a5 5 0 0 1 3 4v2"/></svg></div><span class="mode-tag">1 MENIT · 1V1</span><h3>Tanding Online</h3><p>Masuk antrean dan cari pemain lain. Skor tertinggi menang!</p><button class="card-action" id="cardOnline">Cari lawan <span>↗</span></button></article>
+        <article class="mode-card mode-leader"><div class="mode-icon"><svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0ZM7 6H4v2a4 4 0 0 0 4 4M17 6h3v2a4 4 0 0 1-4 4"/></svg></div><span class="mode-tag">TOP PLAYER</span><h3>Leaderboard</h3><p>Pantau skor terbaik pemain offline dan pertarungan online.</p><button class="card-action" data-page="leaderboard">Lihat peringkat <span>↗</span></button></article>
+      </div>
+      <div class="section-heading feature-heading"><div><span class="eyebrow">DIBUAT UNTUK SEMUA LAYAR</span><h2>Ringan. Cepat. Kompetitif.</h2></div></div>
+      <div class="benefit-grid"><div><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 18h6"/></svg><strong>Mobile-first</strong><span>Nyaman di HP dan komputer.</span></div><div><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg><strong>Skor tersimpan</strong><span>Login untuk menyimpan hasil.</span></div><div><svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5ZM3 12l9 5 9-5M3 16l9 5 9-5"/></svg><strong>Online 1v1</strong><span>Temukan lawan yang sedang online.</span></div></div>
+    </section>
+
+    <section class="page" id="page-features">
+      <div class="page-title"><span class="eyebrow">PUSAT PERMAINAN</span><h1>Fitur Heagun</h1><p>Latihan sendiri, bertanding, dan kejar peringkat.</p></div>
+      <div class="feature-list">
+        <article><span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg></span><div><h3>Main Offline</h3><p>Permainan 30 detik. Skor terbaik tersimpan di leaderboard offline setelah login.</p></div><button class="btn btn-primary" id="featureOffline">Main</button></article>
+        <article><span class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6M18 14a5 5 0 0 1 3 4v2"/></svg></span><div><h3>Tanding Online</h3><p>Antre untuk dipasangkan dengan pemain online. Duel 1 menit, skor disimpan server.</p></div><button class="btn btn-primary" id="featureOnline">Tanding</button></article>
+        <article><span class="feature-icon"><svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0ZM7 6H4v2a4 4 0 0 0 4 4M17 6h3v2a4 4 0 0 1-4 4"/></svg></span><div><h3>Leaderboard</h3><p>Daftar skor terbaik offline dan online, dipisahkan berdasarkan mode.</p></div><button class="btn btn-outline" data-page="leaderboard">Buka</button></article>
+      </div>
+    </section>
+
+    <section class="page" id="page-leaderboard">
+      <div class="page-title"><span class="eyebrow">HALL OF FAME</span><h1>Leaderboard</h1><p>Siapa yang paling jago hari ini?</p></div>
+      <div class="tabs"><button class="tab active" data-mode="offline">Offline</button><button class="tab" data-mode="online">Online 1v1</button></div>
+      <div class="leader-card"><div class="leader-head"><div><span class="eyebrow">TOP 50 PLAYER</span><h2 id="leaderTitle">Skor Offline</h2></div><button class="btn btn-small btn-outline" id="refreshBoard"><svg viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M5.6 9A7 7 0 0 1 18 6l2 6M4 12l2 6a7 7 0 0 0 12.4-3"/></svg>Refresh</button></div><div class="leader-list" id="leaderList"><div class="empty-state">Memuat leaderboard...</div></div></div>
+      <p class="leader-foot"><svg viewBox="0 0 24 24"><path d="m12 3 9 4v5c0 5-4 8-9 9-5-1-9-4-9-9V7Z"/><path d="m8 12 3 3 5-6"/></svg>Nama unik · Skor tersimpan di database</p>
+    </section>
+
+    <footer><a class="brand footer-brand" href="#" data-page="home"><span class="brand-mark"><svg viewBox="0 0 24 24"><path d="M14 3 4 14h7l-1 7 10-12h-7l1-6Z"/></svg></span>Heagun</a><span>Game arcade komunitas · Main dengan sportif.</span><span>© Heagun</span></footer>
+  </main>
+</div>
+
+<div class="mobile-nav"><button class="active" data-page="home"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></svg>Home</button><button data-page="features"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>Fitur</button><button data-page="leaderboard"><svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0ZM7 6H4v2a4 4 0 0 0 4 4M17 6h3v2a4 4 0 0 1-4 4"/></svg>Rank</button></div>
+
+<div class="modal hidden" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle"><div class="modal-backdrop" data-close="auth"></div><div class="modal-card"><button class="modal-close" data-close="auth" aria-label="Tutup">×</button><div class="modal-logo"><span class="brand-mark"><svg viewBox="0 0 24 24"><path d="M14 3 4 14h7l-1 7 10-12h-7l1-6Z"/></svg></span></div><span class="eyebrow">SELAMAT DATANG DI HEAGUN</span><h2 id="authTitle">Masuk ke akunmu</h2><p id="authDesc">Simpan skor dan ikut tanding online.</p><div class="auth-switch"><button class="active" data-auth-mode="signin">Sign in</button><button data-auth-mode="signup">Sign up</button></div><form id="authForm"><label for="username">Nama pemain</label><input id="username" name="username" autocomplete="username" minlength="3" maxlength="20" required placeholder="Contoh: RafiPlayer"><small>3–20 karakter, huruf, angka, _ atau -.</small><label for="password">Password</label><div class="password-wrap"><input id="password" name="password" type="password" autocomplete="current-password" minlength="8" maxlength="72" required placeholder="Minimal 8 karakter"><button type="button" id="togglePassword" aria-label="Tampilkan password"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button></div><div class="form-error" id="authError" role="alert"></div><button class="btn btn-primary auth-submit" id="authSubmit" type="submit">Masuk</button></form><p class="auth-security"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Password disimpan dalam bentuk hash, bukan teks biasa.</p></div></div>
+
+<div class="modal hidden" id="gameModal" role="dialog" aria-modal="true" aria-labelledby="gameTitle"><div class="modal-backdrop" data-close="game"></div><div class="game-card"><div class="game-top"><div><span class="eyebrow" id="gameModeLabel">MODE OFFLINE</span><h2 id="gameTitle">Pukul-Prabowo</h2></div><button class="icon-button" id="closeGame" aria-label="Tutup game">×</button></div><div class="game-stats"><div><span>SKOR</span><strong id="gameScore">0</strong></div><div><span>WAKTU</span><strong id="gameTime">30</strong></div><div><span>COMBO</span><strong id="gameCombo">x0</strong></div></div><div class="game-board" id="gameBoard"></div><div class="game-message" id="gameMessage">Tekan mulai untuk bermain.</div><div class="game-controls"><button class="btn btn-primary" id="gameStart">Mulai</button><button class="btn btn-outline" id="gamePause" disabled>Jeda</button></div><p class="game-hint">Ketuk karakter PRABOWO yang muncul untuk mendapatkan +10 poin.</p></div></div>
+
+<div class="toast hidden" id="toast" role="status"></div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
